@@ -1,0 +1,42 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "organizeImports": {
+    "enabled": true,
+    "include": ["src/*.ts", "test/*.ts", "rollup.config.mjs"]
+  },
+  "linter": {
+    "ignore": ["*.json", "dist/*"],
+    "include": ["src/*.ts", "test/*.ts", "rollup.config.mjs"],
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noUselessConstructor": "warn"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn"
+      },
+      "style": {
+        "useTemplate": "warn",
+        "noUnusedTemplateLiteral": "warn",
+        "noUselessElse": "warn",
+        "noNonNullAssertion": "off",
+        "useSingleVarDeclarator": "off",
+        "useEnumInitializers": "warn"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "ignore": ["dist/*"],
+    "include": ["src/*.ts", "test/*.ts", "rollup.config.mjs", "*.json"]
+  },
+  "javascript": {
+    "formatter": {
+      "indentWidth": 2,
+      "quoteStyle": "single",
+      "trailingComma": "es5"
+    }
+  }
+}

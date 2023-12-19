@@ -1,0 +1,13 @@
+{
+  "name": "@pippo/api",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["biomejs.biome"]
+    }
+  },
+  "postCreateCommand": "bash -i -c 'nvm install && nvm use' && npm install",
+  "remoteUser": "node"
+}

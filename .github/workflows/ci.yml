@@ -1,0 +1,59 @@
+name: 'ci'
+
+concurrency: 
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - dev
+    paths-ignore:
+      - '.devcontainer/**'
+      - '.github/**'
+      - '.vscode/**'
+      - '.gitignore'
+      - '.npmignore'
+      - 'LICENSE'
+      - 'README.md'
+  push:
+    paths-ignore:
+      - '.devcontainer/**'
+      - '.github/**'
+      - '.vscode/**'
+      - '.gitignore'
+      - '.npmignore'
+      - 'LICENSE'
+      - 'README.md'
+
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup NodeJS 18.18.2
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.18.2
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Test
+        run: npm test --if-present
+      
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Check style
+        run: npm run style-check --if-present
+        if: github.event_name == 'pull_request'

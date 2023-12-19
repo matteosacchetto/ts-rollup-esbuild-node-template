@@ -1,0 +1,42 @@
+{
+  "name": "@matteosacchetto/ts-rollup-esbuild-node-template",
+  "private": "true",
+  "version": "0.0.0",
+  "description": "Template for developing a NodeJS app using tpyescript, rollup and esbuild",
+  "main": "dist/index.mjs",
+  "type": "module",
+  "scripts": {
+    "lint": "tsc --pretty --incremental --noEmit && biome lint src/ test/ rollup.config.mjs",
+    "style-check": "biome format src/ test/ rollup.config.mjs",
+    "style-fix": "biome format --write src/ test/ rollup.config.mjs",
+    "dev": "rollup -c -w --environment NODE_ENV:development",
+    "prebuild": "rm -rf dist",
+    "build": "npm run lint && rollup -c --environment NODE_ENV:production",
+    "build:dev": "rollup -c --environment NODE_ENV:development",
+    "build:debug": "rollup -c --environment NODE_ENV:debug",
+    "node": "node --no-warnings --loader=tsx/esm",
+    "test": "node --no-warnings --loader=tsx/esm test.runner.mjs",
+    "prepack": "npm run build",
+    "coverage": "c8 -c .c8rc.json npm run test"
+  },
+  "author": "Matteo Sacchetto",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1-nightly.e087146",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-run": "^3.0.2",
+    "@types/node": "^18.19.3",
+    "c8": "^8.0.1",
+    "rollup": "^4.9.1",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "rollup-plugin-node-externals": "^6.1.2",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": "18.18.2",
+    "npm": ">=9.6.5"
+  }
+}
