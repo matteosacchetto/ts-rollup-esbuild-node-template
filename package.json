@@ -1,6 +1,5 @@
 {
   "name": "@matteosacchetto/ts-rollup-esbuild-node-template",
-  "private": "true",
   "version": "0.0.0",
   "description": "Template for developing a NodeJS app using tpyescript, rollup and esbuild",
   "main": "dist/index.mjs",
