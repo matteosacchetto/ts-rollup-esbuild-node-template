@@ -35,7 +35,7 @@ It also provides some env variables which will be replaced during transpilation
 - `process.env.BUILD_NODE_ENV`: allows to perform threeshaking of code you do not want to have after the production build step
 
 > [!NOTE]
-> If you are using this template for a CLI you need to set the `isCli` property of `rollup.config.mjs` to `true`. Then add `#!/usr/bin/env node` to the top of the `src/index.ts` file
+> If you are using this template for a CLI add `#!/usr/bin/env node` to the top of the `src/index.ts` file
 
 It contains already a bunch of github actions configured
 
