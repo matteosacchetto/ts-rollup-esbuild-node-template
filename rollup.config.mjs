@@ -40,7 +40,7 @@ export default defineConfig({
       'process.env.PKG_NAME': `"${pkg.name}"`,
       'process.env.PKG_VERSION': `"${pkg.version}"`,
       'process.env.PKG_DESCRIPTION': `"${pkg.description}"`,
-      'process.env.BUILD_NODE_ENV': `${isProduction}`,
+      'process.env.BUILD_NODE_ENV': `"${process.env.NODE_ENV}"`,
       preventAssignment: true,
       sourceMap: useSourceMaps,
     }),
