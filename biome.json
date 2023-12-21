@@ -23,6 +23,9 @@
         "noNonNullAssertion": "off",
         "useSingleVarDeclarator": "off",
         "useEnumInitializers": "warn"
+      },
+      "nursery": {
+        "noUnusedImports": "warn"
       }
     }
   },
