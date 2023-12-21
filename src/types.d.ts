@@ -3,6 +3,6 @@ declare namespace NodeJS {
     PKG_NAME: string;
     PKG_VERSION: string;
     PKG_DESCRIPTION: string;
-    BUILD_NODE_ENV: boolean;
+    BUILD_NODE_ENV: string;
   }
 }
