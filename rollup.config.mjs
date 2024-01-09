@@ -1,11 +1,11 @@
-import { defineConfig } from 'rollup';
+import { createRequire } from 'node:module';
 import json from '@rollup/plugin-json';
-import run from '@rollup/plugin-run';
 import replace from '@rollup/plugin-replace';
+import run from '@rollup/plugin-run';
+import { defineConfig } from 'rollup';
+import esbuild from 'rollup-plugin-esbuild';
 import externals from 'rollup-plugin-node-externals';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
-import esbuild from 'rollup-plugin-esbuild';
-import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 
 const pkg = require('./package.json');
