@@ -25,7 +25,12 @@
         "useEnumInitializers": "warn"
       },
       "nursery": {
-        "noUnusedImports": "warn"
+        "noUnusedImports": "warn",
+        "useExportType": "error",
+        "useImportType": "error",
+        "useNodejsImportProtocol": "error",
+        "noInvalidUseBeforeDeclaration": "error",
+        "noUselessTernary": "error"
       }
     }
   },
