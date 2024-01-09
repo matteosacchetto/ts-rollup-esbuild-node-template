@@ -13,8 +13,8 @@
     "build": "npm run lint && rollup -c --environment NODE_ENV:production",
     "build:dev": "rollup -c --environment NODE_ENV:development",
     "build:debug": "rollup -c --environment NODE_ENV:debug",
-    "node": "node --no-warnings --loader=tsx/esm",
-    "test": "node --no-warnings --loader=tsx/esm test.runner.mjs",
+    "node": "node --import=tsx/esm",
+    "test": "node --import=tsx/esm test.runner.mjs",
     "prepack": "npm run build",
     "coverage": "c8 -c .c8rc.json npm run test"
   },
