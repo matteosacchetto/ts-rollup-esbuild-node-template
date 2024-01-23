@@ -29,6 +29,7 @@ export default defineConfig({
     strict: true,
     entryFileNames: '[name].mjs',
     sourcemap: useSourceMaps,
+    preserveModulesRoot: 'src'
   },
   treeshake: 'smallest',
   plugins: [
