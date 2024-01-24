@@ -12,6 +12,7 @@ const pkg = require('./package.json');
 
 const preferConst = true; // Use "const" instead of "var"
 const usePreserveModules = true; // `true` -> keep modules structure, `false` -> combine everything into a single file
+const usePreserveModulesProduction = true; // `true` -> keep modules structure, `false` -> combine everything into a single file
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isWatched = process.env.ROLLUP_WATCH === 'true'; // `true` if -w option is used
@@ -25,11 +26,13 @@ export default defineConfig({
     generatedCode: {
       constBindings: preferConst,
     },
-    preserveModules: isProduction ? false : usePreserveModules,
+    preserveModules: isProduction
+      ? usePreserveModulesProduction
+      : usePreserveModules,
+    preserveModulesRoot: 'src',
     strict: true,
     entryFileNames: '[name].mjs',
     sourcemap: useSourceMaps,
-    preserveModulesRoot: 'src'
   },
   treeshake: 'smallest',
   plugins: [
