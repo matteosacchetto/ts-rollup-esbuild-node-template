@@ -6,6 +6,7 @@ import { defineConfig } from 'rollup';
 import esbuild from 'rollup-plugin-esbuild';
 import externals from 'rollup-plugin-node-externals';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
+import { watcher } from './rollup.plugins.mjs';
 const require = createRequire(import.meta.url);
 
 const pkg = require('./package.json');
@@ -17,6 +18,8 @@ const usePreserveModulesProduction = true; // `true` -> keep modules structure, 
 const isProduction = process.env.NODE_ENV === 'production';
 const isWatched = process.env.ROLLUP_WATCH === 'true'; // `true` if -w option is used
 const useSourceMaps = process.env.NODE_ENV === 'debug';
+
+const additionalWatchFiles = []; // Array with additional files we want to watch on
 
 export default defineConfig({
   input: 'src/index.ts',
@@ -55,6 +58,13 @@ export default defineConfig({
       legalComments: 'none',
       target: 'esnext',
     }),
-    isWatched ? run() : undefined,
+    isWatched
+      ? [
+          watcher({
+            files: additionalWatchFiles,
+          }),
+          run(),
+        ]
+      : undefined,
   ],
 });
