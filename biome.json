@@ -3,11 +3,25 @@
   "organizeImports": {
     "enabled": true,
     "ignore": ["*.json", "dist/*"],
-    "include": ["src/*.ts", "test/*.ts", "scripts/*.mjs", "rollup.config.mjs", "test.runner.mjs"]
+    "include": [
+      "src/*.ts",
+      "test/*.ts",
+      "scripts/*.mjs",
+      "rollup.config.mjs",
+      "rollup.plugins.mjs",
+      "test.runner.mjs"
+    ]
   },
   "linter": {
     "ignore": ["*.json", "dist/*"],
-    "include": ["src/*.ts", "test/*.ts", "scripts/*.mjs", "rollup.config.mjs", "test.runner.mjs"],
+    "include": [
+      "src/*.ts",
+      "test/*.ts",
+      "scripts/*.mjs",
+      "rollup.config.mjs",
+      "rollup.plugins.mjs",
+      "test.runner.mjs"
+    ],
     "enabled": true,
     "rules": {
       "recommended": true,
@@ -39,7 +53,15 @@
     "enabled": true,
     "indentStyle": "space",
     "ignore": ["dist/*"],
-    "include": ["src/*.ts", "test/*.ts", "scripts/*.mjs", "rollup.config.mjs", "test.runner.mjs", "*.json"]
+    "include": [
+      "src/*.ts",
+      "test/*.ts",
+      "scripts/*.mjs",
+      "rollup.config.mjs",
+      "rollup.plugins.mjs",
+      "test.runner.mjs",
+      "*.json"
+    ]
   },
   "javascript": {
     "formatter": {
