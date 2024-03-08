@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.6.0/schema.json",
   "organizeImports": {
     "enabled": true,
     "ignore": ["*.json", "dist/*"],
@@ -37,15 +37,27 @@
         "noUselessElse": "warn",
         "noNonNullAssertion": "off",
         "useSingleVarDeclarator": "off",
-        "useEnumInitializers": "warn"
-      },
-      "nursery": {
-        "noUnusedImports": "warn",
+        "useEnumInitializers": "warn",
         "useExportType": "error",
         "useImportType": "error",
         "useNodejsImportProtocol": "error",
+        "useFilenamingConvention": {
+          "level": "warn",
+          "options": {
+            "filenameCases": ["kebab-case"],
+            "strictCase": false
+          }
+        },
+        "useConsistentArrayType": "warn"
+      },
+      "correctness": {
+        "noUnusedImports": "warn",
         "noInvalidUseBeforeDeclaration": "error",
-        "noUselessTernary": "error"
+        "noUnusedPrivateClassMembers": "warn"
+      },
+      "nursery": {
+        "noUselessTernary": "error",
+        "noExportsInTest": "error"
       }
     }
   },
