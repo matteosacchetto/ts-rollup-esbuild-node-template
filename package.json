@@ -32,7 +32,7 @@
     "rollup-plugin-node-externals": "^7.0.1",
     "rollup-plugin-typescript-paths": "^1.5.0",
     "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   },
   "engines": {
     "node": ">=18.19.0 || >=20.6.0",
