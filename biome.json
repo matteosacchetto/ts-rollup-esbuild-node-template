@@ -1,27 +1,23 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.6.0/schema.json",
-  "organizeImports": {
-    "enabled": true,
-    "ignore": ["*.json", "dist/*"],
+  "files": {
     "include": [
       "src/*.ts",
       "test/*.ts",
       "scripts/*.mjs",
       "rollup.config.mjs",
       "rollup.plugins.mjs",
-      "test.runner.mjs"
+      "test.runner.mjs",
+      "package.json",
+      "biome.json",
+      ".c8rc.json"
     ]
   },
+  "organizeImports": {
+    "enabled": true,
+    "ignore": ["*.json"]
+  },
   "linter": {
-    "ignore": ["*.json", "dist/*"],
-    "include": [
-      "src/*.ts",
-      "test/*.ts",
-      "scripts/*.mjs",
-      "rollup.config.mjs",
-      "rollup.plugins.mjs",
-      "test.runner.mjs"
-    ],
     "enabled": true,
     "rules": {
       "recommended": true,
@@ -63,17 +59,7 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space",
-    "ignore": ["dist/*"],
-    "include": [
-      "src/*.ts",
-      "test/*.ts",
-      "scripts/*.mjs",
-      "rollup.config.mjs",
-      "rollup.plugins.mjs",
-      "test.runner.mjs",
-      "*.json"
-    ]
+    "indentStyle": "space"
   },
   "javascript": {
     "formatter": {

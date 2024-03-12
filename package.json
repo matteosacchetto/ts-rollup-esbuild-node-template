@@ -5,9 +5,9 @@
   "main": "dist/index.mjs",
   "type": "module",
   "scripts": {
-    "lint": "tsc --pretty --incremental --noEmit && biome lint scripts/ src/ test/ rollup.config.mjs rollup.plugins.mjs test.runner.mjs",
-    "style-check": "biome check --formatter-enabled=false --linter-enabled=false --organize-imports-enabled=true scripts/ src/ test/ rollup.config.mjs rollup.plugins.mjs test.runner.mjs && biome format scripts/ src/ test/ rollup.config.mjs rollup.plugins.mjs test.runner.mjs",
-    "style-fix": "biome check --apply --formatter-enabled=false --linter-enabled=false --organize-imports-enabled=true scripts/ src/ test/ rollup.config.mjs rollup.plugins.mjs test.runner.mjs && biome format --write scripts/ src/ test/ rollup.config.mjs rollup.plugins.mjs test.runner.mjs",
+    "lint": "tsc --pretty --incremental --noEmit && biome lint .",
+    "style:check": "biome check --linter-enabled=false .",
+    "style:fix": "biome check --linter-enabled=false --apply .",
     "dev": "rollup -c -w --environment NODE_ENV:development",
     "prebuild": "node scripts/rm.mjs",
     "build": "npm run lint && rollup -c --environment NODE_ENV:production",
