@@ -9,6 +9,7 @@
       "rollup.plugins.mjs",
       "test.runner.mjs",
       "package.json",
+      "tsconfig.json",
       "biome.json",
       ".c8rc.json"
     ]
