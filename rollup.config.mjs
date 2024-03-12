@@ -1,3 +1,4 @@
+// @ts-check
 import { createRequire } from 'node:module';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
@@ -19,6 +20,9 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isWatched = process.env.ROLLUP_WATCH === 'true'; // `true` if -w option is used
 const useSourceMaps = process.env.NODE_ENV === 'debug';
 
+/**
+ * @type {string[]}
+ */
 const additionalWatchFiles = []; // Array with additional files we want to watch on
 
 export default defineConfig({

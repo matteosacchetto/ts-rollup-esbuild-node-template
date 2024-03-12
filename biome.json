@@ -7,6 +7,7 @@
       "scripts/*.mjs",
       "rollup.config.mjs",
       "rollup.plugins.mjs",
+      "rollup.plugins.d.mts",
       "test.runner.mjs",
       "package.json",
       "tsconfig.json",
