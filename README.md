@@ -41,6 +41,6 @@ It contains already a bunch of github actions configured
 
 - `sync-labels`: allows you to synch the github labels accoring to the `.github/labels.yml` file
 - `pr-linter`: enforces conventional commit in PR
-- `ci`: runs `npm run test` and `npm run build`. If it is a PR it also runs `npm run style-check`
+- `ci`: runs `npm run test` and `npm run build`. If it is a PR it also runs `npm run style:check`
 - `release`: it uses `release-please` to create github releases
   - To allow this to run you need to set "Allow GitHub Actions to create and approve pull requests" under repository Settings > Actions > General.
