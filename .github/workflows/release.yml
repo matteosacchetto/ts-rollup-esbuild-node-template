@@ -46,12 +46,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup NodeJS 18.19.0
+      - name: Setup NodeJS version (from .nvmrc)
         uses: actions/setup-node@v4
         with:
-          node-version: 18.19.0
-          cache: npm
-          cache-dependency-path: package-lock.json
+          node-version-file: .nvmrc
 
       - name: Install dependencies
         run: npm ci
