@@ -1,12 +1,15 @@
 import { rm } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { parseArgs } from 'node:util';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const { positionals: entries } = parseArgs({
+  allowPositionals: true,
+});
 
-try {
-  await rm(join(__dirname, '..', 'dist/'), { recursive: true, force: true });
-} catch (e) {
-  console.error(e?.message ?? e);
-  process.exit(1);
+for (const entry of entries) {
+  try {
+    await rm(entry, { recursive: true, force: true });
+  } catch (e) {
+    console.error(e?.message ?? e);
+    process.exit(1);
+  }
 }
