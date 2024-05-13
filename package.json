@@ -25,13 +25,13 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-replace": "^5.0.5",
     "@rollup/plugin-run": "^3.0.2",
-    "@types/node": "^18.19.32",
+    "@types/node": "^18.19.33",
     "c8": "^9.1.0",
     "rollup": "^4.17.2",
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-node-externals": "^7.1.2",
     "rollup-plugin-typescript-paths": "^1.5.0",
-    "tsx": "^4.9.3",
+    "tsx": "^4.10.1",
     "typescript": "^5.4.5"
   },
   "engines": {
