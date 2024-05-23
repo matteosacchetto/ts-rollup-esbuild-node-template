@@ -1,5 +1,5 @@
 {
-  "name": "@pippo/api",
+  "name": "@matteosacchetto/ts-rollup-esbuild-node-template",
   "build": {
     "dockerfile": "Dockerfile"
   },
