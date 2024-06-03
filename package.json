@@ -31,7 +31,7 @@
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-node-externals": "^7.1.2",
     "rollup-plugin-typescript-paths": "^1.5.0",
-    "tsx": "^4.11.0",
+    "tsx": "^4.11.2",
     "typescript": "^5.4.5"
   },
   "engines": {
