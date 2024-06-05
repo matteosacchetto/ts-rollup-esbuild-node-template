@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "tsc --pretty --incremental --noEmit && biome lint .",
     "style:check": "biome check --linter-enabled=false .",
-    "style:fix": "biome check --linter-enabled=false --apply .",
+    "style:fix": "biome check --linter-enabled=false --fix .",
     "dev": "rollup -c -w --environment NODE_ENV:development",
     "prebuild": "node scripts/rm.mjs dist/",
     "build": "npm run lint && rollup -c --environment NODE_ENV:production",
@@ -21,17 +21,17 @@
   "author": "Matteo Sacchetto",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^1.7.3",
+    "@biomejs/biome": "^1.8.0",
     "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-replace": "^5.0.5",
-    "@rollup/plugin-run": "^3.0.2",
-    "@types/node": "^18.19.33",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-run": "^3.1.0",
+    "@types/node": "^18.19.34",
     "c8": "^9.1.0",
     "rollup": "^4.18.0",
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-node-externals": "^7.1.2",
     "rollup-plugin-typescript-paths": "^1.5.0",
-    "tsx": "^4.11.0",
+    "tsx": "^4.11.2",
     "typescript": "^5.4.5"
   },
   "engines": {
