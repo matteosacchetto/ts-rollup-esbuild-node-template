@@ -42,7 +42,7 @@
         "useImportType": "error",
         "useNodejsImportProtocol": "error",
         "useFilenamingConvention": {
-          "level": "warn",
+          "level": "info",
           "options": {
             "filenameCases": ["kebab-case"],
             "strictCase": false
