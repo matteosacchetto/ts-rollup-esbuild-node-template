@@ -31,8 +31,8 @@
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-node-externals": "^7.1.2",
     "rollup-plugin-typescript-paths": "^1.5.0",
-    "tsx": "^4.16.0",
-    "typescript": "^5.5.2"
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
   },
   "engines": {
     "node": ">=18.19.0 || >=20.6.0",
