@@ -25,7 +25,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-run": "^3.1.0",
-    "@types/node": "^18.19.48",
+    "@types/node": "^18.19.50",
     "c8": "^10.1.2",
     "rollup": "^4.21.2",
     "rollup-plugin-esbuild": "^6.1.1",
