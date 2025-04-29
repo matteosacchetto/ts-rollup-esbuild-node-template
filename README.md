@@ -15,8 +15,8 @@ Commit messages should follow the [Angular commit convention format](https://git
 
 Runs with
 
-- `node`: `>=18.19.0 || >= 20.6.0`
-- `npm`: `>=9.6.5`
+- `node`: `>= 20.6.0`
+- `npm`: `>=9.8.1`
 
 It uses
 
