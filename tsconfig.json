@@ -3,9 +3,9 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "bundler",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
