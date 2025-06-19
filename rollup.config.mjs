@@ -7,6 +7,7 @@ import { defineConfig } from 'rollup';
 import esbuild from 'rollup-plugin-esbuild';
 import externals from 'rollup-plugin-node-externals';
 import { resolveTsPaths, watcher } from './rollup.plugins.mjs';
+
 const require = createRequire(import.meta.url);
 
 const pkg = require('./package.json');

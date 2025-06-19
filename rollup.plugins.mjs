@@ -14,17 +14,22 @@ export function watcher({ files }) {
   };
 }
 
-export function resolveTsPaths({ tsconfigPath = 'tsconfig.json', extensions = ['.ts'] } = {}) {
+export function resolveTsPaths({
+  tsconfigPath = 'tsconfig.json',
+  extensions = ['.ts'],
+} = {}) {
   const tsconfig = getTsconfig(tsconfigPath);
-  
+
   // Early return if no tsconfig found or no paths configured
   if (!tsconfig?.config?.compilerOptions?.paths) {
     return {
       name: 'resolve-ts-paths',
-      resolveId() { return null; }
+      resolveId() {
+        return null;
+      },
     };
   }
-  
+
   const matchPath = createPathsMatcher(tsconfig);
   const cache = new Map();
 
@@ -35,11 +40,11 @@ export function resolveTsPaths({ tsconfigPath = 'tsconfig.json', extensions = ['
       if (resolved) return resolved;
 
       const matched = matchPath?.(source);
-      if (!matched?.length) return null;      
+      if (!matched?.length) return null;
 
       for (const match of matched) {
         const fullPath = normalize(match);
-        
+
         // Try direct match
         for (const ext of extensions) {
           const filePath = fullPath + ext;
@@ -48,7 +53,7 @@ export function resolveTsPaths({ tsconfigPath = 'tsconfig.json', extensions = ['
             return filePath;
           }
         }
-        
+
         // Try directory index
         for (const ext of extensions) {
           const indexPath = join(fullPath, `index${ext}`);
@@ -58,7 +63,7 @@ export function resolveTsPaths({ tsconfigPath = 'tsconfig.json', extensions = ['
           }
         }
       }
-      
+
       // Cache negative results to avoid repeated lookups
       cache.set(source, null);
       return null;
