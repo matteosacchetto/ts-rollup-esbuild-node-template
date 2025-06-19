@@ -6,8 +6,7 @@ import run from '@rollup/plugin-run';
 import { defineConfig } from 'rollup';
 import esbuild from 'rollup-plugin-esbuild';
 import externals from 'rollup-plugin-node-externals';
-import { typescriptPaths } from 'rollup-plugin-typescript-paths';
-import { watcher } from './rollup.plugins.mjs';
+import { resolveTsPaths, watcher } from './rollup.plugins.mjs';
 const require = createRequire(import.meta.url);
 
 const pkg = require('./package.json');
@@ -55,9 +54,7 @@ export default defineConfig({
       preventAssignment: true,
       sourceMap: useSourceMaps,
     }),
-    typescriptPaths({
-      preserveExtensions: true,
-    }),
+    resolveTsPaths(),
     esbuild({
       legalComments: 'none',
       target: 'esnext',
